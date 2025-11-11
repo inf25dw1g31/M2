@@ -1,6 +1,6 @@
 # Car4Me – API chapter 
 
-Repository to host the project developed for 'some class', a n^th^ year subject at SOMESCHOOL. Developed by Group ALPHA : [@MarcoOliveira](https://github.com/marcoamarooliveira), [add others].
+Repository to host the project developed for 'some class', a n^th^ year subject at SOMESCHOOL. Developed by Group inf25dw1g31 : [@Carlos Miguel Castro](https://github.com/a046404),[@Marcelo Pinto](https://github.com/MarceloCostaOBJ),[@Rui Amorim](https://github.com/a046404), .
 
 ## Short theme description
 
@@ -52,7 +52,7 @@ _Please add at least on section (a file) per Chapter. But you can add more._
 * Chapter 4: [Presentation](doc/c4.md)
 
 ## Team
-- **Carlos Miguel Castro** [@GandalfTheTech](https://github.com/GandalfTheTech)
+- **Carlos Miguel Castro** [@a046404](https://github.com/a046404)
 - **Marcelo Pinto** [@MarceloCostaOBJ](https://github.com/MarceloCostaOBJ)
-- **Rui Morim** [@](https://github.com/)
+- **Rui Morim** [@a047906](https://github.com/a047906)
 
