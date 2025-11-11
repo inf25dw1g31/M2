@@ -52,5 +52,7 @@ _Please add at least on section (a file) per Chapter. But you can add more._
 * Chapter 4: [Presentation](doc/c4.md)
 
 ## Team
-* 
-* Other team members
+- **Carlos Miguel Castro** [@GandalfTheTech](https://github.com/GandalfTheTech)
+- **Marcelo Pinto** [@MarceloCostaOBJ](https://github.com/MarceloCostaOBJ)
+- **Rui Morim** [@](https://github.com/)
+
