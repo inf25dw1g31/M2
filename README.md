@@ -1,58 +1,96 @@
 # Car4Me – API chapter 
 
-Repository to host the project developed for 'some class', a n^th^ year subject at SOMESCHOOL. Developed by Group inf25dw1g31 : [@Carlos Miguel Castro](https://github.com/a046404),[@Marcelo Pinto](https://github.com/MarceloCostaOBJ),[@Rui Amorim](https://github.com/a046404), .
+##  Descrição do Projeto
 
-## Short theme description
+O **Car4Me** é uma API REST criada para apoiar as operações diárias de uma empresa de aluguer de veículos.  
+O sistema permite gerir:
 
-An example report using markdown on Github. This documentation is writen using [Markdown](https://www.markdownguide.org/). Here is a [link to the basic syntax](https://www.markdownguide.org/basic-syntax), but an [extended syntax](https://www.markdownguide.org/extended-syntax/) is also available. If you're starting with Markdown, you may want to try a [Markdown Tutorial](https://www.markdowntutorial.com/) and read the [getting started](https://www.markdownguide.org/getting-started/) section.
+- clientes  
+- veículos  
+- categorias  
+- funcionários  
+- reservas  
+- manutenções  
+- relação N:N de favoritos (clientes ⇄ veículos)
 
-## Repository organization
+A solução foi construída com **Node.js + Express**, utiliza **MySQL 8** como base de dados relacional, é totalmente **documentada com OpenAPI 3.0**, e executada em ambiente **Docker**.
 
-_Please help reader navigate around describing how the repository is organized by providing links_
-* **Source code** is in the [src folder](src/).
-* Report chapters are in [doc folder](doc/).
-* Initial [OpenApi document](api/openapi.yaml)
+---
 
-## Gallery
+##  Organização do Repositório
 
-_Please provide a galery of the final result, with small images_
-A [table](https://www.markdownguide.org/extended-syntax/#tables) may be usefull to organize the images.
+A estrutura do repositório é a seguinte:
 
-## Technologies
+```
+/
+├── express-server/         # Código fonte da API (routes, controllers, services)
+├── db/                     # Scripts SQL e ficheiros de inicialização
+├── api/                    # Especificação OpenAPI (openapi.yaml)
+├── doc/                    # Capítulos do relatório (C1, C2, C3, C4)
+├── presentation/           # Ficheiros da apresentação
+└── docker-compose.yml      # Definição completa do ambiente Docker
+```
 
-_Indicate the technologies you have used in this assignment. Please provide links for the user to read more about those technologies._
-* [XML](https://www.w3.org/XML/)
-* [HTML5](https://html.spec.whatwg.org/multipage/) + [CSS3](https://www.w3.org/Style/CSS/)
-* [Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
-* [PHP](https://www.php.net/)
-* [nodeJS](https://nodejs.org/en/)
-* _Any other?_
+Ligações rápidas:
 
-### Frameworks and Libraries
+- **Código da API** → `express-server/`  
+- **Relatório em Markdown** → `doc/`  
+- **Documentação OpenAPI** → `api/openapi.yaml`
 
-_Did you use any aditional libraries? Describe them here._
-* Docker
-* Multipass
-* NodeJS
-* JQuery
-* Laravel
-* Bootstrap
-* ReactJS
+---
 
-## Report
-_Please add at least on section (a file) per Chapter. But you can add more._
+## 🖼 Galeria
 
-### Project presentation
-* Chapter 1: [Project presentation](doc/c1.md)
-### Resources
-* Chapter 2: [Resources](doc/c2.md)
-### Product
-* Chapter 3: [Product](doc/c3.md)
-### Presentation
-* Chapter 4: [Presentation](doc/c4.md)
+*(Adicionar as imagens reais dentro da pasta `/doc/imagens/`.)*
 
-## Team
-- **Carlos Miguel Castro** [@a046404](https://github.com/a046404)
-- **Marcelo Pinto** [@MarceloCostaOBJ](https://github.com/MarceloCostaOBJ)
-- **Rui Morim** [@a047906](https://github.com/a047906)
+| Imagem | Descrição |
+|--------|-----------|
+| ![Swagger](./doc/imagens/swagger.png) | Interface Swagger – Documentação da API |
+| ![ER Diagram](./doc/imagens/er_diagram.png) | Diagrama Entidade–Relação |
+| ![Architecture](./doc/imagens/architecture.png) | Arquitetura do Sistema |
 
+---
+
+## 🛠 Tecnologias Utilizadas
+
+A API foi construída com uma stack moderna, estável e escalável:
+
+- **Node.js**
+- **Express.js**
+- **MySQL 8**
+- **Docker / Docker Compose**
+- **OpenAPI 3.0**
+- **Swagger UI**
+- **Mermaid / Draw.io**
+- **VS Code**
+
+### Bibliotecas e Frameworks Adicionais
+
+- mysql2  
+- dotenv  
+- express-router  
+- nodemon (ambiente de desenvolvimento)  
+- DockerHub para publicação de imagens  
+
+---
+
+##  Relatório do Projeto
+
+O relatório encontra-se organizado em capítulos:
+
+- **Capítulo 1:** `doc/c1.md`  
+- **Capítulo 2:** `doc/c2.md`  
+- **Capítulo 3:** `doc/c3.md`  
+- **Capítulo 4:** `doc/c4.md`
+
+---
+
+##  Equipa
+
+| Nome | GitHub |
+|------|--------|
+| **Carlos Miguel Castro** | https://github.com/a046404 |
+| **Marcelo Pinto** | https://github.com/MarceloCostaOBJ |
+| **Rui Amorim** | https://github.com/a047906 |
+
+---
