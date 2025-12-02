@@ -27,7 +27,7 @@ A estrutura do repositório é a seguinte:
       └── image/                             # Imagens  
 └── src/
     └── Car4Me/
-        ├── Api/
+        ├── API + Muitos_Final-(API)_Docker/
         │   ├── express-server/              # Código fonte da API (routes, controllers, services)
         │   ├── db/                          # Scripts SQL e ficheiros de inicialização
         │   ├── api/                         # Especificação OpenAPI (openapi.yaml)
