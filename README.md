@@ -40,7 +40,7 @@ A estrutura do repositório é a seguinte:
 Ligações rápidas:
 
 - **Código da API** → [`express-server/`](https://github.com/inf25dw1g31/M2/tree/main/src/Car4Me/Api/express-server)
-- **Relatório em Markdown** → [`doc/`]((https://github.com/inf25dw1g31/M2/blob/main/doc/)) 
+- **Relatório em Markdown** → [`doc/`]((https://github.com/inf25dw1g31/M2/blob/main/doc)) 
 - **Documentação OpenAPI** → [`api/openapi.yaml`](https://github.com/inf25dw1g31/M2/blob/main/src/Car4Me/Api/openapi.yaml)
 
 
