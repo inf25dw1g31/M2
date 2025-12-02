@@ -23,17 +23,19 @@ A estrutura do repositório é a seguinte:
 
 ```
 /
+└── doc/                                     # Capítulos do relatório (C1, C2, C3, C4)
+      └── image/                             # Imagens  
 └── src/
     └── Car4Me/
         ├── Api/
-        │   ├── express-server/      # Código fonte da API (routes, controllers, services)
-        │   ├── db/                  # Scripts SQL e ficheiros de inicialização
-        │   ├── api/                 # Especificação OpenAPI (openapi.yaml)
-        │   ├── doc/                 # Capítulos do relatório (C1, C2, C3, C4)
-        │   └── presentation/        # Ficheiros da apresentação
-        └── docker-compose.yml       # Definição completa do ambiente Docker
-├── doc/                             # Capítulos do relatório (C1, C2, C3, C4)
-└── presentation/                    # Ficheiros da apresentaçãor
+        │   ├── express-server/              # Código fonte da API (routes, controllers, services)
+        │   ├── db/                          # Scripts SQL e ficheiros de inicialização
+        │   ├── api/                         # Especificação OpenAPI (openapi.yaml)
+        │   ├── doc/                         # Capítulos do relatório (C1, C2, C3, C4)
+        │   └── presentation/                # Ficheiros da apresentação
+        └── docker-compose.prod.yml          # Definição completa do ambiente Docker
+        └── Car4Me API.postman_collection    # Ficheiro postman
+└── presentation/                            # Ficheiros da apresentaçãor
 ```
 
 Ligações rápidas:
