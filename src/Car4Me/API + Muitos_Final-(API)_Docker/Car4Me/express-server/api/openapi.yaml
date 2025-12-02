@@ -1,0 +1,874 @@
+openapi: 3.0.3
+info:
+  title: Car4Me API
+  version: 2.0.0
+servers:
+- url: http://localhost:8080
+paths:
+  /clientes:
+    get:
+      operationId: clientesGET
+      responses:
+        "200":
+          description: Lista de clientes
+      summary: Listar clientes
+      tags:
+      - Clientes
+      x-eov-operation-handler: controllers/ClientesController
+    post:
+      operationId: clientesPOST
+      requestBody:
+        content:
+          application/json:
+            example:
+              nome: João Silva
+              email: joao@example.com
+              telefone: "912345678"
+              nif: "123456789"
+              morada: "Rua das Flores 12, Porto"
+            schema:
+              $ref: "#/components/schemas/Cliente"
+        required: true
+      responses:
+        "201":
+          description: Cliente criado
+      summary: Criar cliente
+      tags:
+      - Clientes
+      x-eov-operation-handler: controllers/ClientesController
+  /clientes/{id}:
+    delete:
+      operationId: clientesIdDELETE
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Cliente eliminado
+        "404":
+          description: Cliente não encontrado
+      summary: Eliminar cliente
+      tags:
+      - Clientes
+      x-eov-operation-handler: controllers/ClientesController
+    get:
+      operationId: clientesIdGET
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Cliente encontrado
+        "404":
+          description: Cliente não encontrado
+      summary: Obter cliente por ID
+      tags:
+      - Clientes
+      x-eov-operation-handler: controllers/ClientesController
+    put:
+      operationId: clientesIdPUT
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              nome: João Silva
+              email: joao@example.com
+              telefone: "912345678"
+              nif: "123456789"
+              morada: "Rua das Flores 12, Porto"
+            schema:
+              $ref: "#/components/schemas/Cliente"
+        required: true
+      responses:
+        "200":
+          description: Cliente atualizado
+        "404":
+          description: Cliente não encontrado
+      summary: Atualizar cliente
+      tags:
+      - Clientes
+      x-eov-operation-handler: controllers/ClientesController
+  /veiculos:
+    get:
+      operationId: veiculosGET
+      parameters:
+      - explode: true
+        in: query
+        name: estado
+        required: false
+        schema:
+          enum:
+          - Disponivel
+          - Alugado
+          - Manutencao
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: marca
+        required: false
+        schema:
+          enum:
+          - Audi
+          - BMW
+          - Mercedes
+          - Volkswagen
+          - Renault
+          - Peugeot
+          - Citroen
+          - Toyota
+          - Nissan
+          - Honda
+          - Hyundai
+          - Kia
+          - Ford
+          - Opel
+          - Volvo
+          - Fiat
+          - Seat
+          - Skoda
+          - Mazda
+          - Mitsubishi
+          - Jeep
+          - Land Rover
+          - Mini
+          - Porsche
+          - Lexus
+          - Subaru
+          - Alfa Romeo
+          - Dacia
+          - Jaguar
+          - Chevrolet
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: id_categoria
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          description: Lista de veículos
+      summary: Listar veículos
+      tags:
+      - Veiculos
+      x-eov-operation-handler: controllers/VeiculosController
+    post:
+      operationId: veiculosPOST
+      requestBody:
+        content:
+          application/json:
+            example:
+              marca: Audi
+              modelo: A4
+              matricula: AA-11-BB
+              ano: 2023
+              cor: Preto
+              quilometragem: 15000
+              estado: Disponivel
+              id_categoria: 3
+            schema:
+              $ref: "#/components/schemas/Veiculo"
+        required: true
+      responses:
+        "201":
+          description: Veículo criado
+      summary: Criar veículo
+      tags:
+      - Veiculos
+      x-eov-operation-handler: controllers/VeiculosController
+  /veiculos/{id}:
+    delete:
+      operationId: veiculosIdDELETE
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Veículo eliminado
+        "404":
+          description: Veículo não encontrado
+      summary: Eliminar veículo
+      tags:
+      - Veiculos
+      x-eov-operation-handler: controllers/VeiculosController
+    get:
+      operationId: veiculosIdGET
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Veículo encontrado
+        "404":
+          description: Veículo não encontrado
+      summary: Obter veículo por ID
+      tags:
+      - Veiculos
+      x-eov-operation-handler: controllers/VeiculosController
+    put:
+      operationId: veiculosIdPUT
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              marca: Audi
+              modelo: A4
+              matricula: AA-11-BB
+              ano: 2023
+              cor: Preto
+              quilometragem: 15000
+              estado: Disponivel
+              id_categoria: 3
+            schema:
+              $ref: "#/components/schemas/Veiculo"
+        required: true
+      responses:
+        "200":
+          description: Veículo atualizado
+        "404":
+          description: Veículo não encontrado
+      summary: Atualizar veículo
+      tags:
+      - Veiculos
+      x-eov-operation-handler: controllers/VeiculosController
+  /favoritos:
+    get:
+      operationId: favoritosGET
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/_favoritos_get_200_response_inner"
+                type: array
+          description: Lista completa de favoritos
+      summary: Listar todas as relações favoritos
+      tags:
+      - Favoritos
+      x-eov-operation-handler: controllers/FavoritosController
+    post:
+      operationId: favoritosPOST
+      requestBody:
+        content:
+          application/json:
+            example:
+            - id_cliente: 1
+              id_veiculo: 25
+            - id_cliente: 1
+              id_veiculo: 26
+            - id_cliente: 2
+              id_veiculo: 30
+            schema:
+              items:
+                $ref: "#/components/schemas/_favoritos_post_request_inner"
+              type: array
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_favoritos_post_201_response"
+          description: Favoritos criados com sucesso
+        "400":
+          description: Erro nos dados enviados
+        "500":
+          description: Erro no servidor
+      summary: Criar uma ou várias relações de favoritos
+      tags:
+      - Favoritos
+      x-eov-operation-handler: controllers/FavoritosController
+  /clientes/{id_cliente}/favoritos/{id_veiculo}:
+    delete:
+      operationId: clientesIdClienteFavoritosIdVeiculoDELETE
+      parameters:
+      - explode: false
+        in: path
+        name: id_cliente
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: id_veiculo
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_clientes__id_cliente__favoritos__id_veiculo__delete_200_response"
+          description: Favorito removido com sucesso
+        "404":
+          description: Favorito inexistente / cliente ou veículo não encontrado
+      summary: Remover veículo dos favoritos do cliente
+      tags:
+      - Favoritos
+      x-eov-operation-handler: controllers/FavoritosController
+    put:
+      operationId: clientesIdClienteFavoritosIdVeiculoPUT
+      parameters:
+      - explode: false
+        in: path
+        name: id_cliente
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: id_veiculo
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              novo_id_veiculo: 55
+            schema:
+              $ref: "#/components/schemas/_clientes__id_cliente__favoritos__id_veiculo__put_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_clientes__id_cliente__favoritos__id_veiculo__put_200_response"
+          description: Favorito atualizado com sucesso
+        "400":
+          description: Dados inválidos ou favorito já existente
+        "404":
+          description: Cliente ou favorito não encontrado
+      summary: Atualizar favorito (substituir veículo favorito)
+      tags:
+      - Favoritos
+      x-eov-operation-handler: controllers/FavoritosController
+  /clientes/{id_cliente}/favoritos/{id_veiculo}/cliente:
+    put:
+      operationId: clientesIdClienteFavoritosIdVeiculoClientePUT
+      parameters:
+      - explode: false
+        in: path
+        name: id_cliente
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: id_veiculo
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              novo_id_cliente: 20
+            schema:
+              $ref: "#/components/schemas/_clientes__id_cliente__favoritos__id_veiculo__cliente_put_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_clientes__id_cliente__favoritos__id_veiculo__put_200_response"
+          description: Cliente associado ao favorito atualizado
+        "400":
+          description: Dados inválidos ou relação já existente
+        "404":
+          description: "Cliente, novo cliente ou favorito não encontrado"
+      summary: Alterar o cliente associado ao favorito
+      tags:
+      - Favoritos
+      x-eov-operation-handler: controllers/FavoritosController
+  /reservas:
+    get:
+      operationId: reservasGET
+      parameters:
+      - explode: true
+        in: query
+        name: estado
+        required: false
+        schema:
+          enum:
+          - ativa
+          - concluida
+          - cancelada
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: id_cliente
+        required: false
+        schema:
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: id_veiculo
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          description: Lista de reservas
+      summary: Listar reservas
+      tags:
+      - Reservas
+      x-eov-operation-handler: controllers/ReservasController
+    post:
+      operationId: reservasPOST
+      requestBody:
+        content:
+          application/json:
+            example:
+              id_cliente: 1
+              id_veiculo: 3
+              id_funcionario: 5
+              data_inicio: 2025-01-20T00:00:00.000Z
+              data_fim: 2025-01-25T00:00:00.000Z
+              preco_total: 350
+              estado: ativa
+            schema:
+              $ref: "#/components/schemas/Reserva"
+        required: true
+      responses:
+        "201":
+          description: Reserva criada
+      summary: Criar reserva
+      tags:
+      - Reservas
+      x-eov-operation-handler: controllers/ReservasController
+  /reservas/{id}:
+    delete:
+      operationId: reservasIdDELETE
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Reserva eliminada
+        "404":
+          description: Reserva não encontrada
+      summary: Eliminar reserva
+      tags:
+      - Reservas
+      x-eov-operation-handler: controllers/ReservasController
+    get:
+      operationId: reservasIdGET
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Reserva encontrada
+        "404":
+          description: Reserva não encontrada
+      summary: Obter reserva por ID
+      tags:
+      - Reservas
+      x-eov-operation-handler: controllers/ReservasController
+    put:
+      operationId: reservasIdPUT
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              id_cliente: 1
+              id_veiculo: 3
+              id_funcionario: 5
+              data_inicio: 2025-01-20T00:00:00.000Z
+              data_fim: 2025-01-25T00:00:00.000Z
+              preco_total: 350
+              estado: ativa
+            schema:
+              $ref: "#/components/schemas/Reserva"
+        required: true
+      responses:
+        "200":
+          description: Reserva atualizada
+        "404":
+          description: Reserva não encontrada
+      summary: Atualizar reserva
+      tags:
+      - Reservas
+      x-eov-operation-handler: controllers/ReservasController
+  /manutencoes:
+    get:
+      operationId: manutencoesGET
+      parameters:
+      - explode: true
+        in: query
+        name: id_veiculo
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          description: Lista de manutenções
+      summary: Listar manutenções
+      tags:
+      - Manutenções
+      x-eov-operation-handler: controllers/ManutenesController
+    post:
+      operationId: manutencoesPOST
+      requestBody:
+        content:
+          application/json:
+            example:
+              id_veiculo: 5
+              descricao: Troca de óleo
+              data_manutencao: 2024-12-05T00:00:00.000Z
+              custo: 85
+            schema:
+              $ref: "#/components/schemas/Manutencao"
+        required: true
+      responses:
+        "201":
+          description: Manutenção criada
+      summary: Criar manutenção
+      tags:
+      - Manutenções
+      x-eov-operation-handler: controllers/ManutenesController
+  /manutencoes/{id}:
+    delete:
+      operationId: manutencoesIdDELETE
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Eliminada
+        "404":
+          description: Não encontrada
+      summary: Eliminar manutenção
+      tags:
+      - Manutenções
+      x-eov-operation-handler: controllers/ManutenesController
+    get:
+      operationId: manutencoesIdGET
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Manutenção encontrada
+        "404":
+          description: Não encontrada
+      summary: Obter manutenção por ID
+      tags:
+      - Manutenções
+      x-eov-operation-handler: controllers/ManutenesController
+    put:
+      operationId: manutencoesIdPUT
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              id_veiculo: 5
+              descricao: Troca de óleo
+              data_manutencao: 2024-12-05T00:00:00.000Z
+              custo: 85
+            schema:
+              $ref: "#/components/schemas/Manutencao"
+        required: true
+      responses:
+        "200":
+          description: Atualizado
+        "404":
+          description: Não encontrada
+      summary: Atualizar manutenção
+      tags:
+      - Manutenções
+      x-eov-operation-handler: controllers/ManutenesController
+components:
+  schemas:
+    Cliente:
+      example:
+        telefone: telefone
+        nome: nome
+        nif: nif
+        email: email
+        morada: morada
+      properties:
+        nome:
+          type: string
+        email:
+          type: string
+        telefone:
+          type: string
+        nif:
+          type: string
+        morada:
+          type: string
+      type: object
+    Funcionario:
+      properties:
+        nome:
+          type: string
+        email:
+          type: string
+        cargo:
+          type: string
+        telefone:
+          type: string
+      type: object
+    Veiculo:
+      example:
+        marca: Audi
+        estado: Disponivel
+        ano: 0
+        cor: cor
+        id_categoria: 1
+        matricula: matricula
+        quilometragem: 6
+        modelo: modelo
+      properties:
+        marca:
+          enum:
+          - Audi
+          - BMW
+          - Mercedes
+          - Volkswagen
+          - Renault
+          - Peugeot
+          - Citroen
+          - Toyota
+          - Nissan
+          - Honda
+          - Hyundai
+          - Kia
+          - Ford
+          - Opel
+          - Volvo
+          - Fiat
+          - Seat
+          - Skoda
+          - Mazda
+          - Mitsubishi
+          - Jeep
+          - Land Rover
+          - Mini
+          - Porsche
+          - Lexus
+          - Subaru
+          - Alfa Romeo
+          - Dacia
+          - Jaguar
+          - Chevrolet
+          type: string
+        modelo:
+          type: string
+        matricula:
+          type: string
+        ano:
+          type: integer
+        cor:
+          type: string
+        quilometragem:
+          type: integer
+        estado:
+          enum:
+          - Disponivel
+          - Alugado
+          - Manutencao
+          type: string
+        id_categoria:
+          type: integer
+      type: object
+    Reserva:
+      example:
+        data_inicio: 2000-01-23T04:56:07.000+00:00
+        id_veiculo: 6
+        data_fim: 2000-01-23T04:56:07.000+00:00
+        estado: ativa
+        id_cliente: 0
+        id_funcionario: 1
+        preco_total: 5.962133916683182
+      properties:
+        id_cliente:
+          type: integer
+        id_veiculo:
+          type: integer
+        id_funcionario:
+          type: integer
+        data_inicio:
+          format: date-time
+          type: string
+        data_fim:
+          format: date-time
+          type: string
+        preco_total:
+          type: number
+        estado:
+          enum:
+          - ativa
+          - concluida
+          - cancelada
+          type: string
+      type: object
+    Manutencao:
+      example:
+        id_veiculo: 0
+        custo: 6.027456183070403
+        data_manutencao: 2000-01-23T04:56:07.000+00:00
+        descricao: descricao
+      properties:
+        id_veiculo:
+          type: integer
+        descricao:
+          type: string
+        data_manutencao:
+          format: date-time
+          type: string
+        custo:
+          type: number
+      type: object
+    _favoritos_get_200_response_inner:
+      example:
+        id_veiculo: 6
+        id_cliente: 0
+      properties:
+        id_cliente:
+          type: integer
+        id_veiculo:
+          type: integer
+      type: object
+    _favoritos_post_request_inner:
+      example:
+        id_veiculo: 6
+        id_cliente: 0
+      properties:
+        id_cliente:
+          type: integer
+        id_veiculo:
+          type: integer
+      required:
+      - id_cliente
+      - id_veiculo
+      type: object
+    _favoritos_post_201_response:
+      example:
+        inseridos: 0
+      properties:
+        inseridos:
+          type: integer
+      type: object
+    _clientes__id_cliente__favoritos__id_veiculo__put_request:
+      properties:
+        novo_id_veiculo:
+          type: integer
+      type: object
+    _clientes__id_cliente__favoritos__id_veiculo__put_200_response:
+      example:
+        atualizado_para: 6
+        atualizado_de: 0
+        message: message
+      properties:
+        message:
+          type: string
+        atualizado_de:
+          type: integer
+        atualizado_para:
+          type: integer
+      type: object
+    _clientes__id_cliente__favoritos__id_veiculo__delete_200_response:
+      example:
+        message: Veículo removido dos favoritos
+      properties:
+        message:
+          example: Veículo removido dos favoritos
+          type: string
+      type: object
+    _clientes__id_cliente__favoritos__id_veiculo__cliente_put_request:
+      properties:
+        novo_id_cliente:
+          type: integer
+      type: object
