@@ -126,7 +126,7 @@ CREATE INDEX idx_manutencoes_veiculo ON manutencoes(id_veiculo);
 
 
 -- ==================================================================================
--- >>> AQUI ESTÁ A NOVA TABELA M:N (CLIENTES ⇄ VEÍCULOS)
+-- M:N (CLIENTES ⇄ VEÍCULOS)
 -- ==================================================================================
 CREATE TABLE clientes_favoritos (
     id_cliente INT NOT NULL,
@@ -143,4 +143,5 @@ CREATE TABLE clientes_favoritos (
         REFERENCES veiculos(id_veiculo)
         ON DELETE CASCADE
         ON UPDATE CASCADE
+
 );
