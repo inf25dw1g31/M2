@@ -1,0 +1,1724 @@
+{
+	"info": {
+		"_postman_id": "1f76cbe9-9ed4-4339-8e22-4c856bd1f284",
+		"name": "Car4Me API Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48760199"
+	},
+	"item": [
+		{
+			"name": "clientes",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter cliente por ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/clientes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar cliente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@example.com\",\n  \"telefone\": \"912345678\",\n  \"nif\": \"923456789\",\n  \"morada\": \"Rua das Flores 12, Porto\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/clientes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "14"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar cliente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/clientes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Eliminar cliente",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/clientes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clientes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "20"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Listar clientes sem sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@example.com\",\n  \"telefone\": \"912345678\",\n  \"nif\": \"123456789\",\n  \"morada\": \"Rua das Flores 12, Porto\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "veiculos",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter veículo por ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is 2xx\", function () {",
+											"    pm.expect(pm.response.code).to.be.within(200, 299);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/veiculos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"veiculos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar veículo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"marca\": \"Audi\",\n  \"modelo\": \"A4\",\n  \"matricula\": \"AA-11-BB\",\n  \"ano\": 2023,\n  \"cor\": \"Preto\",\n  \"quilometragem\": 15000,\n  \"estado\": \"Disponivel\",\n  \"id_categoria\": 3\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/veiculos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"veiculos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar veículo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/veiculos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"veiculos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Eliminar veículo sem sucesso",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/veiculos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"veiculos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1415"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Listar veículos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/veiculos?estado=Alugado&marca=Kia&id_categoria=1415",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veiculos"
+							],
+							"query": [
+								{
+									"key": "estado",
+									"value": "Alugado"
+								},
+								{
+									"key": "marca",
+									"value": "Kia"
+								},
+								{
+									"key": "id_categoria",
+									"value": "1415"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar veículo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"marca\": \"Audi\",\n  \"modelo\": \"A4\",\n  \"matricula\": \"AA-11-BB\",\n  \"ano\": 2023,\n  \"cor\": \"Preto\",\n  \"quilometragem\": 15000,\n  \"estado\": \"Disponivel\",\n  \"id_categoria\": 3\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veiculos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "favoritos",
+			"item": [
+				{
+					"name": "Listar todas as relações favoritos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 2xx\", function () {",
+									"    pm.expect(pm.response.code).to.be.within(200, 299);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/favoritos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"favoritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar uma ou várias relações de favoritos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 2xx\", function () {",
+									"    pm.expect(pm.response.code).to.be.within(200, 299);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"id_cliente\": 1,\n    \"id_veiculo\": 25\n  },\n  {\n    \"id_cliente\": 1,\n    \"id_veiculo\": 26\n  },\n  {\n    \"id_cliente\": 2,\n    \"id_veiculo\": 30\n  }\n]",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/favoritos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"favoritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar favorito (substituir veículo favorito)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 2xx\", function () {",
+									"    pm.expect(pm.response.code).to.be.within(200, 299);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"novo_id_veiculo\": 55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/:id_cliente/favoritos/:id_veiculo\n",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								":id_cliente",
+								"favoritos",
+								":id_veiculo\n"
+							],
+							"query": [
+								{
+									"key": "{id_cliente}",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "{id_veiculo}",
+									"value": "1",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id_cliente",
+									"value": "1"
+								},
+								{
+									"key": "id_veiculo\n",
+									"value": "26"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar cliente associado ao favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 2xx\", function () {",
+									"    pm.expect(pm.response.code).to.be.within(200, 299);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"novo_id_cliente\": 20\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/:id_cliente/favoritos/:id_veiculo/cliente",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								":id_cliente",
+								"favoritos",
+								":id_veiculo",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "{id_cliente}",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "{id_veiculo}",
+									"value": "1",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id_cliente",
+									"value": "2"
+								},
+								{
+									"key": "id_veiculo",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 2xx\", function () {",
+									"    pm.expect(pm.response.code).to.be.within(200, 299);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/:id_cliente/favoritos/:id_veiculo\n",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								":id_cliente",
+								"favoritos",
+								":id_veiculo\n"
+							],
+							"variable": [
+								{
+									"key": "id_cliente",
+									"value": "1"
+								},
+								{
+									"key": "id_veiculo\n",
+									"value": "55"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservas",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter reserva por ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar reserva",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id_cliente\": 1,\n  \"id_veiculo\": 3,\n  \"id_funcionario\": 5,\n  \"data_inicio\": \"2025-01-20T00:00:00.000Z\",\n  \"data_fim\": \"2025-01-25T00:00:00.000Z\",\n  \"preco_total\": 350,\n  \"estado\": \"ativa\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar reserva",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Criar reserva",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id_cliente\": 1,\n  \"id_veiculo\": 3,\n  \"id_funcionario\": 5,\n  \"data_inicio\": \"2025-01-20T00:00:00.000Z\",\n  \"data_fim\": \"2025-01-25T00:00:00.000Z\",\n  \"preco_total\": 350,\n  \"estado\": \"ativa\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar reservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas?estado=ativa&id_cliente=1415&id_veiculo=1415",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							],
+							"query": [
+								{
+									"key": "estado",
+									"value": "ativa"
+								},
+								{
+									"key": "id_cliente",
+									"value": "1415"
+								},
+								{
+									"key": "id_veiculo",
+									"value": "1415"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "manutencoes",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Obter manutenção por ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/manutencoes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"manutencoes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar manutenção",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id_veiculo\": 5,\n  \"descricao\": \"Troca de óleo\",\n  \"data_manutencao\": \"2024-12-05T00:00:00.000Z\",\n  \"custo\": 85\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/manutencoes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"manutencoes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar manutenção",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code is one of [200, 404]\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/manutencoes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"manutencoes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1415"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Listar manutenções",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/manutencoes?id_veiculo=1415",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"manutencoes"
+							],
+							"query": [
+								{
+									"key": "id_veiculo",
+									"value": "1415"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar manutenção",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id_veiculo\": 5,\n  \"descricao\": \"Troca de óleo\",\n  \"data_manutencao\": \"2024-12-05T00:00:00.000Z\",\n  \"custo\": 85\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/manutencoes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"manutencoes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cenários Manutenção",
+			"item": [
+				{
+					"name": "01 - Criar veículo teste (Disponivel)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"201 Created\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"const body = pm.response.json();",
+									"",
+									"pm.test(\"Resposta contém id_veiculo numérico\", function () {",
+									"    pm.expect(body).to.have.property(\"id_veiculo\");",
+									"    pm.expect(body.id_veiculo).to.be.a(\"number\");",
+									"});",
+									"",
+									"pm.test(\"Veículo criado com estado Disponivel\", function () {",
+									"    pm.expect(body).to.have.property(\"estado\");",
+									"    pm.expect(body.estado).to.eql(\"Disponivel\");",
+									"});",
+									"",
+									"// Guardar o id_veiculo para os próximos testes",
+									"pm.environment.set(\"id_veiculo_teste\", body.id_veiculo);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"marca\": \"Toyota\",\n  \"modelo\": \"Corolla Teste\",\n  \"matricula\": \"ZZ-99-TEST\",\n  \"ano\": 2024,\n  \"cor\": \"Prata\",\n  \"quilometragem\": 0,\n  \"estado\": \"Disponivel\",\n  \"id_categoria\": 3\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/veiculos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Confirmar veículo teste está Disponivel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const veiculo = pm.response.json();",
+									"",
+									"pm.test(\"Veículo correto\", function () {",
+									"    const esperado = parseInt(pm.environment.get(\"id_veiculo_teste\"), 10);",
+									"    pm.expect(veiculo).to.have.property(\"id_veiculo\");",
+									"    pm.expect(veiculo.id_veiculo).to.eql(esperado);",
+									"});",
+									"",
+									"pm.test(\"Estado ainda é Disponivel\", function () {",
+									"    pm.expect(veiculo).to.have.property(\"estado\");",
+									"    pm.expect(veiculo.estado).to.eql(\"Disponivel\");",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/veiculos/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veiculos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{id_veiculo_teste}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Criar manutenção para veículo teste",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"201 Created\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"const m = pm.response.json();",
+									"",
+									"pm.test(\"Manutenção associada ao veículo de teste\", function () {",
+									"    const idVeic = parseInt(pm.environment.get(\"id_veiculo_teste\"), 10);",
+									"    pm.expect(m).to.have.property(\"id_veiculo\");",
+									"    pm.expect(m.id_veiculo).to.eql(idVeic);",
+									"});",
+									"",
+									"// Guardar id da manutenção se vier na resposta",
+									"if (m.id_manutencao) {",
+									"    pm.environment.set(\"id_manutencao_teste\", m.id_manutencao);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id_veiculo\": {{id_veiculo_teste}},\n  \"descricao\": \"Revisão geral – teste Postman\",\n  \"data_manutencao\": \"2024-12-10T10:00:00.000Z\",\n  \"custo\": 150.0\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/manutencoes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"manutencoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Confirmar veículo teste em Manutencao",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const veiculo = pm.response.json();",
+									"",
+									"pm.test(\"Veículo correto\", function () {",
+									"    const esperado = parseInt(pm.environment.get(\"id_veiculo_teste\"), 10);",
+									"    pm.expect(veiculo).to.have.property(\"id_veiculo\");",
+									"    pm.expect(veiculo.id_veiculo).to.eql(esperado);",
+									"});",
+									"",
+									"pm.test(\"Estado do veículo mudou para Manutencao\", function () {",
+									"    pm.expect(veiculo).to.have.property(\"estado\");",
+									"    pm.expect(veiculo.estado).to.eql(\"Manutencao\");",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/veiculos/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"veiculos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{id_veiculo_teste}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cenário Cliente + Reserva",
+			"item": [
+				{
+					"name": "01 - Criar cliente teste",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"201 Created\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"const body = pm.response.json();",
+									"",
+									"pm.test(\"Resposta contém id_cliente\", function () {",
+									"    pm.expect(body).to.have.property(\"id_cliente\");",
+									"    pm.expect(body.id_cliente).to.be.a(\"number\");",
+									"});",
+									"",
+									"// Guardar id_cliente em variável de ambiente (id_teste2)",
+									"pm.environment.set(\"id_teste2\", body.id_cliente);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Cliente Teste Cenário\",\n  \"email\": \"cliente.cenario@car4me.pt\",\n  \"telefone\": \"911111111\",\n  \"nif\": \"999999990\",\n  \"morada\": \"Rua de Teste Cenário, 123, Porto\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Obter cliente teste por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const c = pm.response.json();",
+									"",
+									"pm.test(\"Cliente correto\", function () {",
+									"    const esperado = parseInt(pm.environment.get(\"id_teste2\"), 10);",
+									"    pm.expect(c).to.have.property(\"id_cliente\");",
+									"    pm.expect(c.id_cliente).to.eql(esperado);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{id_teste2}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Criar reserva para cliente teste",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"201 Created\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"const r = pm.response.json();",
+									"",
+									"pm.test(\"Reserva criada com id_reserva\", function () {",
+									"    pm.expect(r).to.have.property(\"id_reserva\");",
+									"    pm.expect(r.id_reserva).to.be.a(\"number\");",
+									"});",
+									"",
+									"pm.test(\"Reserva ligada ao cliente teste\", function () {",
+									"    const idCli = parseInt(pm.environment.get(\"id_teste2\"), 10);",
+									"    pm.expect(r.id_cliente).to.eql(idCli);",
+									"});",
+									"",
+									"// Guardar id_reserva em variável de ambiente",
+									"pm.environment.set(\"id_reserva_teste\", r.id_reserva);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id_cliente\": {{id_teste2}},\n  \"id_veiculo\": 1,\n  \"id_funcionario\": 1,\n  \"data_inicio\": \"2025-01-10T10:00:00.000Z\",\n  \"data_fim\": \"2025-01-12T10:00:00.000Z\",\n  \"preco_total\": 150.00,\n  \"estado\": \"ativa\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Obter cliente teste após reserva",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const c = pm.response.json();",
+									"",
+									"pm.test(\"Cliente ainda é o mesmo\", function () {",
+									"    const esperado = parseInt(pm.environment.get(\"id_teste2\"), 10);",
+									"    pm.expect(c.id_cliente).to.eql(esperado);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{id_teste2}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Eliminar reserva",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is one of [200, 404]\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1415"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Eliminar cliente teste",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Cliente apagado (200 ou 204)\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 204]);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{id_teste2}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "id_veiculo_teste",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
