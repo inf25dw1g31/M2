@@ -31,7 +31,6 @@ A estrutura do repositório é a seguinte:
         │   ├── express-server/              # Código fonte da API (routes, controllers, services)
         │   ├── db/                          # Scripts SQL e ficheiros de inicialização
         │   ├── api/                         # Especificação OpenAPI (openapi.yaml)
-        │   ├── doc/                         # Capítulos do relatório (C1, C2, C3, C4)
         └── docker-compose.prod.yml          # Definição completa do ambiente Docker
         └── Car4Me API.postman_collection    # Ficheiro postman
 └── presentation/                            # Ficheiros da apresentaçãor
