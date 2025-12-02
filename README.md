@@ -44,17 +44,6 @@ Ligações rápidas:
 - **Relatório em Markdown** → `doc/`  
 - **Documentação OpenAPI** → `api/openapi.yaml`
 
----
-
-## 🖼 Galeria
-
-*(Adicionar as imagens reais dentro da pasta `/doc/imagens/`.)*
-
-| Imagem | Descrição |
-|--------|-----------|
-| ![Swagger](./doc/imagens/swagger.png) | Interface Swagger – Documentação da API |
-| ![ER Diagram](./doc/imagens/er_diagram.png) | Diagrama Entidade–Relação |
-| ![Architecture](./doc/imagens/architecture.png) | Arquitetura do Sistema |
 
 ---
 
