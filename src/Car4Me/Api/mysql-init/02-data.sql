@@ -250,6 +250,46 @@ INSERT INTO manutencoes (id_veiculo, descricao, data_manutencao, custo) VALUES
 (59, 'Substituição do escape', '2025-01-12', 450.00),
 (60, 'Super revisão desportiva', '2025-01-13', 1500.00);
 
+INSERT INTO clientes_favoritos (id_cliente, id_veiculo) VALUES
+    (1, 1),
+    (1, 2),
+    (1, 3),
+
+    (2, 2),
+    (2, 3),
+    (2, 4),
+
+    (3, 1),
+    (3, 4),
+    (3, 5),
+
+    (4, 3),
+    (4, 5),
+    (4, 6),
+
+    (5, 1),
+    (5, 6),
+    (5, 7),
+
+    (6, 7),
+    (6, 8),
+    (6, 9),
+
+    (7, 2),
+    (7, 8),
+    (7, 10),
+
+    (8, 9),
+    (8, 10),
+    (8, 11),
+
+    (9, 5),
+    (9, 11),
+    (9, 12),
+
+    (10, 4),
+    (10, 12),
+    (10, 13);
 
 
 -- ============================================
@@ -328,5 +368,6 @@ BEGIN
     SET estado = 'Manutencao'
     WHERE id_veiculo = NEW.id_veiculo;
 END $$
+
 
 DELIMITER ;
