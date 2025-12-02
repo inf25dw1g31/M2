@@ -39,9 +39,9 @@ A estrutura do repositório é a seguinte:
 
 Ligações rápidas:
 
-- **Código da API** → `express-server/`  
-- **Relatório em Markdown** → `doc/`  
-- **Documentação OpenAPI** → `api/openapi.yaml`
+- **Código da API** → [`express-server/`](https://github.com/inf25dw1g31/M2/tree/main/src/Car4Me/Api/express-server)
+- **Relatório em Markdown** → [`doc/`]((https://github.com/inf25dw1g31/M2/blob/main/doc/)) 
+- **Documentação OpenAPI** → [`api/openapi.yaml`](https://github.com/inf25dw1g31/M2/blob/main/src/Car4Me/Api/openapi.yaml)
 
 
 ---
@@ -62,9 +62,8 @@ A API foi construída com uma stack moderna, estável e escalável:
 ### Bibliotecas e Frameworks Adicionais
 
 - mysql2  
-- dotenv  
 - express-router  
-- nodemon (ambiente de desenvolvimento)  
+- node (ambiente de desenvolvimento)  
 - DockerHub para publicação de imagens  
 
 ---
@@ -74,9 +73,9 @@ A API foi construída com uma stack moderna, estável e escalável:
 O relatório encontra-se organizado em capítulos:
 
 - **Capítulo 1:** [`doc/c1.md`](https://github.com/inf25dw1g31/M2/blob/main/doc/c1.md)
-- **Capítulo 2:** `doc/c2.md`(https://github.com/inf25dw1g31/M2/blob/main/doc/c2.md)  
-- **Capítulo 3:** `doc/c3.md`(https://github.com/inf25dw1g31/M2/blob/main/doc/c3.md)
-- **Capítulo 4:** `doc/c4.md`(https://github.com/inf25dw1g31/M2/blob/main/doc/c4.md)
+- **Capítulo 2:** [`doc/c2.md`](https://github.com/inf25dw1g31/M2/blob/main/doc/c2.md)  
+- **Capítulo 3:** [`doc/c3.md`](https://github.com/inf25dw1g31/M2/blob/main/doc/c3.md)
+- **Capítulo 4:** [`doc/c4.md`](https://github.com/inf25dw1g31/M2/blob/main/doc/c4.md)
 
 ---
 
