@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: a046363/inf25dw1g31-mysql:10.0.0        
+    container_name: car4me-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: car4me
+    ports:
+      - "3307:3306"
+    volumes:
+      - car4me-mysql-data:/var/lib/mysql
+    restart: always
+
+  api:
+    image: a046363/inf25dw1g31:10.0.0      
+    container_name: car4me-api
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: 12345678
+      DB_NAME: car4me
+    ports:
+      - "8080:8080"
+    restart: always
+
+volumes:
+  car4me-mysql-data:
