@@ -73,7 +73,7 @@ A API foi construída com uma stack moderna, estável e escalável:
 
 O relatório encontra-se organizado em capítulos:
 
-- **Capítulo 1:** `doc/c1.md`(https://github.com/inf25dw1g31/M2/blob/main/doc/c1.md)
+- **Capítulo 1:** [`doc/c1.md`](https://github.com/inf25dw1g31/M2/blob/main/doc/c1.md)
 - **Capítulo 2:** `doc/c2.md`(https://github.com/inf25dw1g31/M2/blob/main/doc/c2.md)  
 - **Capítulo 3:** `doc/c3.md`(https://github.com/inf25dw1g31/M2/blob/main/doc/c3.md)
 - **Capítulo 4:** `doc/c4.md`(https://github.com/inf25dw1g31/M2/blob/main/doc/c4.md)
